@@ -2,4 +2,6 @@
 /AR/AAA
 /AI/LocalLLM
 /AI/command_manager
+/AI/AAAHost
 key.json
+.vscode
