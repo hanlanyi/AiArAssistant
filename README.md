@@ -1,45 +1,44 @@
-# AiArAssistant
+﻿# AiArAssistant
 
 ![System Overview](pics/overview.png)
 
-**AiArAssistant** is a next-generation software framework that fuses **Artificial Intelligence (AI)** with **Augmented Reality (AR)** to create intelligent, interactive, and dynamic AR experiences.
+**AiArAssistant** is a software framework that fuses **Artificial Intelligence (AI)** with **Augmented Reality (AR)** to create intelligent, interactive, and dynamic AR experiences.
 
-This project empowers AR environments with advanced AI capabilities—ranging from contextual information retrieval to autonomous manipulation of virtual objects—by seamlessly integrating local Large Language Models (LLMs), Retrieval-Augmented Generation (RAG), and the MCP (Model Context Protocol) servers that intelligently routes user intents through embedded agents, all while maintaining real-time performance across AR platforms.
+This project empowers AR environments with advanced AI capabilities by integrating local Large Language Models (LLMs), Retrieval-Augmented Generation (RAG), an AI agent layer, and the MCP (Model Context Protocol) server, while maintaining real-time performance across AR platforms.
 
-## ✨ Key Features
+## Key Features
 
 - **Intelligent AR Interaction**  
   Control and modify virtual 3D objects in AR using natural language commands.
 
 - **MCP Server with Agent Routing**  
-  The **MCP (Model Context Protocol) server** houses the Agent system to interpret, classify, and route user intents to the most suitable AI modules—enabling seamless orchestration of tasks and workflows.
+  The MCP server hosts the agent system to interpret, classify, and route user intents to the right AI modules.
 
 - **RAG-Enhanced Knowledge**  
-  Retrieve and generate contextually accurate responses from personal or domain-specific knowledge bases using Retrieval-Augmented Generation.
+  Retrieve and generate contextually accurate responses from personal or domain-specific knowledge bases using RAG.
 
-- **Modular MLOps + LoRA**  
-  Fine-tune and manage models locally with Hugging Face, GPU acceleration, and modular components for training, embedding, and ranking.
+- **Local LLM Inference**  
+  Run inference with local LLMs for low-latency, on-device or edge execution.
 
 - **Cross-Device AR Compatibility**  
-  Works with a variety of AR glasses and devices, enabling portability and scalability.
+  Works with a variety of AR glasses and devices.
 
-## 🧠 Architecture Overview
+## Architecture Overview
 
-The system is divided into two main domains:
+The system is divided into two main domains that communicate in real time:
 
-### AI Modules
-- **MLOps**: Handles training, validation, and fine-tuning (e.g., LoRA) of models.
-- **Local LLM**: Runs inference using on-device LLMs powered by Hugging Face and shared memory for speed.
-- **RAG**: Retrieves knowledge from documents and combines it with LLMs for grounded responses.
-- **MCP Server**: A central coordination hub that includes:
-  - **Agent**: Classifies user intents and selects the proper tools or modules to handle them.
+### AI Domain
+- **RAG**: Retrieves knowledge and grounds responses.
+- **Local LLM**: Executes inference on local or edge hardware.
+- **AI Agent**: Interprets intents and chooses tools and workflows.
+- **MCP**: Orchestrates the AI components and exposes services to AR.
 
-### AR Modules
-- **AR Network**: Connects AR devices like headsets and smart glasses.
+### AR Domain
+- **AR Network**: Connects AR devices and routes data streams.
 - **ARO Manager**: Controls AR objects and manages their properties and behaviors.
-- **AI Client**: Communicates with the AI backend (including the MCP server), sends and receives commands.
-- **UI**: User interface for inputting commands and visualizing the AR environment.
+- **Communication**: Bridges AR and AI with a real-time messaging layer.
+- **UI**: User interface for input and visualization in AR.
 
 ---
 
-> 🧩 **AiArAssistant** aims to bridge the gap between immersive environments and intelligent systems—giving users the power to not only explore AR, but to shape it with their words via the **MCP server**.
+> **AiArAssistant** bridges immersive environments and intelligent systems, giving users the power to shape AR with their words via the MCP server.
